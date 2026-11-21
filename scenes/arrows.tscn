@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dj3fbvpelhbln"]
+
+[ext_resource type="Texture2D" uid="uid://iweedjsht0dm" path="res://assets/Tiny Swords (Free Pack)/Units/Blue Units/Archer/Arrow.png" id="1_ipnrd"]
+[ext_resource type="Script" uid="uid://c0lcdrebekocs" path="res://scripts/mob.gd" id="1_skkvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skkvd"]
+atlas = ExtResource("1_ipnrd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh3b2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skkvd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(20, 96)
+
+[node name="Arrows" type="RigidBody2D" unique_id=79228143]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_skkvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2115060638]
+sprite_frames = SubResource("SpriteFrames_bh3b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=727185360]
+visibility_layer = 0
+position = Vector2(0, -6.9938216e-07)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_jyhfs")
+debug_color = Color(0, 0.6, 0.7019608, 0.7411765)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=523397026]
+rect = Rect2(-24, -10, 48, 20)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

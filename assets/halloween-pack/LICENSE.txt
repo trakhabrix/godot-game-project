@@ -1,0 +1,19 @@
+TizWildin Entertainment — Halloween Asset Pack
+Copyright (c) 2026 TizWildin Entertainment
+
+You MAY:
+  - Use these assets in any project, free or commercial (games, videos, streams, apps).
+  - Modify, recolor, remix, and re-time them.
+  - Ship them inside your finished product.
+
+You may NOT:
+  - Resell, redistribute, or upload the assets as-is (or lightly modified) as a standalone
+    asset pack, sprite/sound library, or training dataset.
+  - Claim you created the original assets.
+
+Credit is appreciated but not required: "Halloween Asset Pack by TizWildin Entertainment".
+
+All assets were created procedurally and are original works. No third-party samples,
+sprites, or fonts are included.
+
+THE ASSETS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
