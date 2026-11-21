@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://g4y4opkq74vu"]
+
+[ext_resource type="Texture2D" uid="uid://cb32lom7bwyct" path="res://assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_05.png" id="1_8gqc7"]
+[ext_resource type="Script" uid="uid://cwcy73vsl08ql" path="res://scenes/drop.gd" id="1_n3sop"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3sop"]
+atlas = ExtResource("1_8gqc7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0up2u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3sop")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gqc7"]
+size = Vector2(32, 32)
+
+[node name="Drop" type="Area2D" unique_id=1404187862]
+script = ExtResource("1_n3sop")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439051251]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_0up2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1179188954]
+shape = SubResource("RectangleShape2D_8gqc7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
