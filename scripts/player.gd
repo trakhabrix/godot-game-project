@@ -1,17 +1,16 @@
 extends Area2D
 
-var can_slash = false
-
 signal hit
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
+@export var death_effect: PackedScene
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
 	screen_size = get_viewport_rect().size
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,24 +40,19 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = velocity.x < 0	
 	
 func _on_body_entered(body: Node2D) -> void:
-	hide() # Player disappears after being hit.
+	# Create death particles
+	var particles = death_effect.instantiate()
+
+	get_tree().current_scene.add_child(particles)
+	particles.global_position = global_position
+	particles.emitting = true
+	# Hide player
+	hide()
+	# Notify Main that the player was hit
 	hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
+	# Disable collision
 	$CollisionShape2D.set_deferred("disabled", true)
-	
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-
-func slash_attack() -> void:
-	if can_slash:
-		can_slash = false
-
-	# Find nearby creeps
-		for mob in get_tree().get_nodes_in_group("mobs"):
-			mob.queue_free()
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("slash"):
-		slash_attack()

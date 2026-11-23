@@ -19,9 +19,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(20, 96)
+size = Vector2(20, 44)
 
-[node name="Arrows" type="RigidBody2D" unique_id=79228143]
+[node name="Arrows" type="RigidBody2D" unique_id=79228143 groups=["arrows"]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_skkvd")
@@ -30,13 +30,12 @@ script = ExtResource("1_skkvd")
 sprite_frames = SubResource("SpriteFrames_bh3b2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=727185360]
-visibility_layer = 0
-position = Vector2(0, -6.9938216e-07)
+position = Vector2(-1, -6.5567076e-07)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_jyhfs")
 debug_color = Color(0, 0.6, 0.7019608, 0.7411765)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=523397026]
-rect = Rect2(-24, -10, 48, 20)
+rect = Rect2(-22, -10, 43, 20)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

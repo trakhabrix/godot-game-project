@@ -1,0 +1,12 @@
+Pixel Burst VFX: Status Effects & Loot Rarity – license (FREE)
+
+You may use these assets in free and commercial games and apps, modified or not.
+Credit appreciated, not required (e.g. "VFX: Pixel Burst VFX by dotplays").
+You may not resell or redistribute the assets themselves (alone, modified, or inside another asset pack),
+or claim them as your own.
+You may let AI coding assistants read these files to place the assets in your game.
+You may not use the assets to train or fine-tune AI models that generate images.
+
+How it was made: every effect and icon in this pack is drawn by our own code (noise fields, ordered dithering,
+hand-placed pixel glyphs and hand-tuned 6-colour palettes). No generative AI was used for the effects, the
+icons, the cover or the previews.
