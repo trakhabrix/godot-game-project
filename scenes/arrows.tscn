@@ -22,7 +22,6 @@ animations = [{
 size = Vector2(20, 44)
 
 [node name="Arrows" type="RigidBody2D" unique_id=79228143 groups=["arrows"]]
-collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_skkvd")
 
@@ -36,6 +35,6 @@ shape = SubResource("RectangleShape2D_jyhfs")
 debug_color = Color(0, 0.6, 0.7019608, 0.7411765)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=523397026]
-rect = Rect2(-22, -10, 43, 20)
+rect = Rect2(-22, -7, 43, 14)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
