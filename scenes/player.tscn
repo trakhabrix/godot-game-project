@@ -104,7 +104,7 @@ animations = [{
 radius = 15.0
 height = 42.0
 
-[node name="Player" type="Area2D" unique_id=95992543]
+[node name="Player" type="Area2D" unique_id=95992543 groups=["player"]]
 script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=614710348]

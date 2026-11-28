@@ -7,8 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://f6dnel20gd06" path="res://scenes/hud.tscn" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dss0sj1jgkt7n" path="res://scenes/bats.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://cm67ogx8br2mv" path="res://scenes/death_effect.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bpb3sfxg54gkf" path="res://scenes/boss.tscn" id="5_tipki"]
 
 [sub_resource type="Curve2D" id="Curve2D_7mycd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1160, 0, 0, 0, 0, 0, 1160, 647.99994, 0, 0, 0, 0, 0, 647.99994, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_o6xl0"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1160, 0, 0, 0, 0, 0, 1160, 647.99994, 0, 0, 0, 0, 0, 647.99994, 0, 0, 0, 0, 0, 0)
 }
@@ -41,16 +48,10 @@ script = ExtResource("1_jyhfs")
 ghost_scene = ExtResource("2_o6xl0")
 arrow_scene = ExtResource("3_tbgi4")
 bat_scene = ExtResource("4_tipki")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=33338530]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.24251121, 0.2528819, 0.79326624, 0.99215686)
+boss_scene = ExtResource("5_tipki")
 
 [node name="Player" parent="." unique_id=95992543 instance=ExtResource("3_tefeu")]
+visible = false
 death_effect = ExtResource("5_tefeu")
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1119360421]
@@ -62,14 +63,24 @@ wait_time = 0.5
 wait_time = 2.0
 one_shot = true
 
+[node name="BossTimer" type="Timer" parent="." unique_id=1851655460]
+wait_time = 30.0
+
 [node name="StartPosition" type="Marker2D" parent="." unique_id=1134276458]
 position = Vector2(576, 448)
 
 [node name="MobPath" type="Path2D" parent="." unique_id=1811763942]
+visible = false
 scale = Vector2(0.99310344, 1)
 curve = SubResource("Curve2D_7mycd")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=1748514571]
+
+[node name="BossPath" type="Path2D" parent="." unique_id=1415085794]
+scale = Vector2(0.99310344, 1)
+curve = SubResource("Curve2D_o6xl0")
+
+[node name="BossSpawnLocation" type="PathFollow2D" parent="BossPath" unique_id=219009642]
 
 [node name="HUD" parent="." unique_id=1471026852 instance=ExtResource("4_o6xl0")]
 
@@ -83,4 +94,5 @@ stream = SubResource("AudioStreamWAV_7mycd")
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="BossTimer" to="." method="_on_boss_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]

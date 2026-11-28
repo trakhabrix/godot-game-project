@@ -42,9 +42,14 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Create death particles
 	var particles = death_effect.instantiate()
-
+	
+	# Add Particles to the Current Scene
 	get_tree().current_scene.add_child(particles)
+	
+	# Set the Particle Position
 	particles.global_position = global_position
+	
+	# Start the death particles
 	particles.emitting = true
 	# Hide player
 	hide()
@@ -52,6 +57,7 @@ func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 	# Disable collision
 	$CollisionShape2D.set_deferred("disabled", true)
+
 func start(pos):
 	position = pos
 	show()
