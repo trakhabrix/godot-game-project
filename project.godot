@@ -17,13 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-<<<<<<< Updated upstream
-SilentWolf="*uid://dvguaygsbf0gs"
-Global="*uid://ch5bgoiaue6c5"
-=======
-SilentWolf="*uid://ejos54l43i57"
 Global="*uid://cx28uidaijd3k"
->>>>>>> Stashed changes
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
