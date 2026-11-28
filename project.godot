@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="booth_game"
-run/main_scene="uid://c1fbxfbsuujbp"
+run/main_scene="uid://cgxvadqwhbcbp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+<<<<<<< Updated upstream
 SilentWolf="*uid://dvguaygsbf0gs"
 Global="*uid://ch5bgoiaue6c5"
+=======
+SilentWolf="*uid://ejos54l43i57"
+Global="*uid://cx28uidaijd3k"
+>>>>>>> Stashed changes
 
 [display]
 

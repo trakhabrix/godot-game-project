@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cgxvadqwhbcbp"]
+
+[ext_resource type="Script" uid="uid://cuwnclwyvmyg1" path="res://scripts/get_player_name.gd" id="1_qbrse"]
+[ext_resource type="FontFile" uid="uid://chi3kefjfwlgr" path="res://assets/fonts/Xolonium-Regular.ttf" id="2_peuhc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r806"]
+bg_color = Color(0.6568159, 0.44895464, 0.17981073, 1)
+
+[node name="Get_player_name" type="Control" unique_id=1299018306]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qbrse")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1204081206]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 200.0
+offset_right = 775.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3r806")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1128618326]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 235.0
+offset_right = 764.0
+offset_bottom = 300.0
+
+[node name="Submit" type="Button" parent="." unique_id=984026040]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 313.0
+offset_right = 713.0
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("2_peuhc")
+theme_override_font_sizes/font_size = 29
+text = "Submit"
+
+[node name="Name" type="Label" parent="." unique_id=1942208927]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 247.0
+offset_right = 512.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("2_peuhc")
+theme_override_font_sizes/font_size = 37
+text = "Name:"
+
+[connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]

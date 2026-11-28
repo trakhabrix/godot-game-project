@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cmjpsalsvgp1d"]
+
+[ext_resource type="Script" uid="uid://l3vgq63igoar" path="res://scripts/level.gd" id="1_w7c3h"]
+[ext_resource type="FontFile" uid="uid://chi3kefjfwlgr" path="res://assets/fonts/Xolonium-Regular.ttf" id="2_w8frs"]
+
+[node name="Level" type="Node2D" unique_id=134808517]
+script = ExtResource("1_w7c3h")
+
+[node name="Control" type="Control" parent="." unique_id=402997465]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="Control" unique_id=370565846]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 325.0
+offset_top = 175.0
+offset_right = 825.0
+offset_bottom = 475.0
+color = Color(0.52906674, 0.5290667, 0.5290667, 1)
+
+[node name="Score" type="Label" parent="Control" unique_id=1729637267]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.788002
+anchor_bottom = 16.165
+offset_left = 491.0
+offset_top = 313.0
+offset_right = -540.52
+offset_bottom = -283.60004
+theme_override_fonts/font = ExtResource("2_w8frs")
+theme_override_font_sizes/font_size = 35
+text = "Score:"
+
+[node name="Message" type="Label" parent="Control" unique_id=1922618713]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 434.0
+offset_top = 232.0
+offset_right = 675.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w8frs")
+theme_override_font_sizes/font_size = 34
+text = "GAME OVER!"
+
+[node name="Submit" type="Button" parent="Control" unique_id=428127454]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
+offset_left = 475.0
+offset_top = 417.0
+offset_right = 675.0
+offset_bottom = 475.0
+theme_override_fonts/font = ExtResource("2_w8frs")
+theme_override_font_sizes/font_size = 28
+text = "Submit"
+
+[node name="Back" type="Button" parent="Control" unique_id=1687923328]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 761.0
+offset_top = 175.0
+offset_right = 826.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("2_w8frs")
+theme_override_font_sizes/font_size = 22
+text = "Back"
+
+[node name="LeaderboardButton" type="Button" parent="Control" unique_id=689002503]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 176.0
+offset_right = 668.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("2_w8frs")
+theme_override_font_sizes/font_size = 26
+text = "Leaderboard"
+
+[connection signal="pressed" from="Control/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]

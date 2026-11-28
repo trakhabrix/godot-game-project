@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b743kd285e1yi"]
+
+[ext_resource type="Script" uid="uid://uaja2yjb0obl" path="res://scripts/leaderboard.gd" id="1_8lgqg"]
+[ext_resource type="FontFile" uid="uid://chi3kefjfwlgr" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_wgq7h"]
+[ext_resource type="Script" uid="uid://14jqtgmypjmo" path="res://scripts/grid_container.gd" id="2_8lgqg"]
+
+[node name="Leaderboard" type="Control" unique_id=1195001700]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8lgqg")
+
+[node name="BG" type="ColorRect" parent="." unique_id=667382759]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(0, 0.5527905, 0.5527904, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1675829380]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.5
+offset_right = 186.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/separation = 275
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=444949611]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wgq7h")
+theme_override_font_sizes/font_size = 35
+text = "Ranking"
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=154615965]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wgq7h")
+theme_override_font_sizes/font_size = 35
+text = "Name"
+
+[node name="Label3" type="Label" parent="HBoxContainer" unique_id=61075503]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wgq7h")
+theme_override_font_sizes/font_size = 35
+text = "Score"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=680313022]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 66.0
+offset_right = 1064.0
+offset_bottom = 569.0
+theme_override_constants/h_separation = 427
+theme_override_constants/v_separation = 120
+columns = 3
+script = ExtResource("2_8lgqg")
+
+[node name="Button" type="Button" parent="." unique_id=307670082]
+layout_mode = 0
+offset_left = 1089.0
+offset_right = 1152.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("1_wgq7h")
+theme_override_font_sizes/font_size = 21
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

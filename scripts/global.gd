@@ -1,14 +1,13 @@
 extends Node
 
+var player_name : String = ""
+var player_lost : Array = []
+var score : int = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  SilentWolf.configure({
-	"api_key": "Nk2vPLmR2r8TUHHGhz4Iz5tfyn4vV3Nk2n8zkxsl",
-	"game_id": "wackodungeon",
-	"log_level": 1
-  })
 
-  SilentWolf.configure_scores({
-	"open_scene_on_close": "res://scenes/MainPage.tscn"
+  SilentWolf.configure({
+	"api_key": "alR4OXEAjD8fFhKmmjaWW1dc4LoxanZW6m2UQNQt",
+	"game_id": "leaderboardboothgame",
+	"log_level": 1
   })
