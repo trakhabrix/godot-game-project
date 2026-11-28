@@ -10,7 +10,7 @@ var score
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	new_game()
+	pass
 
 func game_over() -> void:
 	$HUD.show_game_over()
@@ -29,7 +29,7 @@ func new_game():
 	$StartTimer.start()
 	$Music.play()
 	#Disappear all enemies when starting again
-	get_tree().call_group("mob", "queue_free")
+	get_tree().call_group("ghost", "queue_free")
 	get_tree().call_group("arrows", "queue_free")
 	get_tree().call_group("bats", "queue_free")
 	get_tree().call_group("boss", "queue_free")
@@ -134,7 +134,7 @@ func _on_start_timer_timeout() -> void:
 	$BossTimer.start()
 
 func _on_boss_timer_timeout() -> void:
-	if elapsed_time >= 20:
+	if elapsed_time >= 10:
 		var boss = boss_scene.instantiate()
 
 		var boss_spawn_location = $BossPath/BossSpawnLocation

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="dodge_game_test"
+config/name="booth_game"
 run/main_scene="uid://c1fbxfbsuujbp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"

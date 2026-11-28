@@ -43,9 +43,10 @@ animations = [{
 radius = 24.0
 height = 64.0
 
-[node name="Ghost" type="RigidBody2D" unique_id=1809898369 groups=["mob"]]
+[node name="Ghost" type="RigidBody2D" unique_id=1809898369 groups=["ghost"]]
 collision_mask = 0
 gravity_scale = 0.0
+angular_velocity = 0.05235988
 angular_damp_mode = 1
 script = ExtResource("1_l5lq6")
 
