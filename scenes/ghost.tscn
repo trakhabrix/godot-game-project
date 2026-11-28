@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b1bjby5wxvfiu"]
+
+[ext_resource type="Script" uid="uid://c0lcdrebekocs" path="res://scripts/mob.gd" id="1_l5lq6"]
+[ext_resource type="Texture2D" uid="uid://td4lus01rgtf" path="res://assets/halloween-pack/sprites/spritesheet.png" id="2_bbnym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxvl"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpivu"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nao87"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i71wu"]
+atlas = ExtResource("2_bbnym")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh3b2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebxvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpivu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nao87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i71wu")
+}],
+"loop": 1,
+"name": &"ghost",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh2yh"]
+radius = 24.0
+height = 64.0
+
+[node name="Ghost" type="RigidBody2D" unique_id=1809898369 groups=["mob"]]
+collision_mask = 0
+gravity_scale = 0.0
+angular_damp_mode = 1
+script = ExtResource("1_l5lq6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=802965995]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_bh3b2")
+animation = &"ghost"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=382694741]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sh2yh")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=446499359]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

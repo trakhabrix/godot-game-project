@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dss0sj1jgkt7n"]
+
+[ext_resource type="Texture2D" uid="uid://dyctuyc67lvck" path="res://assets/halloween-pack/sprites/1x/bat_0.png" id="1_1o4ep"]
+[ext_resource type="Script" uid="uid://cdoa7rwlxmyw5" path="res://scripts/bats.gd" id="1_sf11x"]
+[ext_resource type="Texture2D" uid="uid://8pi5cip70ojf" path="res://assets/halloween-pack/sprites/1x/bat_1.png" id="2_sf11x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh3b2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1o4ep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sf11x")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh2yh"]
+size = Vector2(32, 19)
+
+[node name="bats" type="RigidBody2D" unique_id=150021005 groups=["bats"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_sf11x")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1236611691]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bh3b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1742824321]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_sh2yh")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1449721144]
+rect = Rect2(-12, -12, 24, 22)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

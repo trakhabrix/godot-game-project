@@ -1,0 +1,130 @@
+{
+ "pack": "Pixel Burst VFX: Status Effects & Loot Rarity FREE",
+ "version": "1.0",
+ "effects": [
+  {
+   "id": "status_burn",
+   "name": "Burn",
+   "category": "status",
+   "palette": "fire",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 10,
+   "fps": 10,
+   "loop": true,
+   "pivot": "feet",
+   "sheet": "sheets/1x/status/status_burn.png",
+   "godot": "godot/status/status_burn.tres"
+  },
+  {
+   "id": "status_poison",
+   "name": "Poison",
+   "category": "status",
+   "palette": "poison",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 12,
+   "fps": 10,
+   "loop": true,
+   "pivot": "feet",
+   "sheet": "sheets/1x/status/status_poison.png",
+   "godot": "godot/status/status_poison.tres"
+  },
+  {
+   "id": "status_stun",
+   "name": "Stun stars",
+   "category": "status",
+   "palette": "volt",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 8,
+   "fps": 10,
+   "loop": true,
+   "pivot": "feet",
+   "sheet": "sheets/1x/status/status_stun.png",
+   "godot": "godot/status/status_stun.tres"
+  },
+  {
+   "id": "status_sleep",
+   "name": "Sleep Zzz",
+   "category": "status",
+   "palette": "sleep",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 12,
+   "fps": 10,
+   "loop": true,
+   "pivot": "feet",
+   "sheet": "sheets/1x/status/status_sleep.png",
+   "godot": "godot/status/status_sleep.tres"
+  },
+  {
+   "id": "apply_buff",
+   "name": "Buff pillar",
+   "category": "apply_remove",
+   "palette": "holy",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 10,
+   "fps": 10,
+   "loop": false,
+   "pivot": "feet",
+   "sheet": "sheets/1x/apply_remove/apply_buff.png",
+   "godot": "godot/apply_remove/apply_buff.tres"
+  },
+  {
+   "id": "loot_beam",
+   "name": "Loot beam (rare)",
+   "category": "loot",
+   "palette": "rare",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 10,
+   "fps": 10,
+   "loop": true,
+   "pivot": "bottom",
+   "sheet": "sheets/1x/loot/loot_beam.png",
+   "godot": "godot/loot/loot_beam.tres"
+  },
+  {
+   "id": "loot_drop_sparkle",
+   "name": "Drop sparkle",
+   "category": "loot",
+   "palette": "rare",
+   "frame_width": 32,
+   "frame_height": 32,
+   "frames": 9,
+   "fps": 10,
+   "loop": false,
+   "pivot": "center",
+   "sheet": "sheets/1x/loot/loot_drop_sparkle.png",
+   "godot": "godot/loot/loot_drop_sparkle.tres"
+  },
+  {
+   "id": "death_dissolve",
+   "name": "Pixel dissolve",
+   "category": "death",
+   "palette": "mind",
+   "frame_width": 48,
+   "frame_height": 48,
+   "frames": 12,
+   "fps": 10,
+   "loop": false,
+   "pivot": "feet",
+   "sheet": "sheets/1x/death/death_dissolve.png",
+   "godot": "godot/death/death_dissolve.tres"
+  }
+ ],
+ "icons": {
+  "size": 16,
+  "strip": "icons/status_icons_strip_16px.png",
+  "order": [
+   "icon_burn",
+   "icon_freeze",
+   "icon_poison",
+   "icon_stun",
+   "icon_sleep",
+   "icon_regen"
+  ]
+ }
+}
